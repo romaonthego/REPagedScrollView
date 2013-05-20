@@ -100,6 +100,9 @@
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2.0) / pageWidth) + 1;
 	_pageControl.currentPage = page;
+    
+    if ([_delegate conformsToProtocol:@protocol(UIScrollViewDelegate)] && [_delegate respondsToSelector:@selector(scrollViewDidScroll:)])
+        [_delegate scrollViewDidScroll:scrollView];
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
