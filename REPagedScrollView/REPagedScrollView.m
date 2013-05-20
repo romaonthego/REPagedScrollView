@@ -149,6 +149,9 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
+    if ([_delegate conformsToProtocol:@protocol(UIScrollViewDelegate)] && [_delegate respondsToSelector:@selector(viewForZoomingInScrollView:)])
+        return [_delegate viewForZoomingInScrollView:scrollView];
+    
     return nil;
 }
 
