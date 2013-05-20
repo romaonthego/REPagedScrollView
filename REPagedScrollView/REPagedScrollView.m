@@ -170,7 +170,8 @@
 
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
 {
-    
+    if ([_delegate conformsToProtocol:@protocol(UIScrollViewDelegate)] && [_delegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])
+        [_delegate scrollViewDidScrollToTop:scrollView];
 }
 
 
