@@ -23,7 +23,6 @@
 // THE SOFTWARE.
 //
 
-
 #import "REPagedScrollView.h"
 
 @interface REPagedScrollView()
