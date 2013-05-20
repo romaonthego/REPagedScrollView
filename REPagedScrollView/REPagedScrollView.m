@@ -104,7 +104,8 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    
+    if ([_delegate conformsToProtocol:@protocol(UIScrollViewDelegate)] && [_delegate respondsToSelector:@selector(scrollViewDidZoom:)])
+        [_delegate scrollViewDidZoom:scrollView];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
