@@ -31,6 +31,7 @@
 @property (strong, readonly, nonatomic) UIPageControl *pageControl;
 @property (assign, readonly, nonatomic) NSUInteger numberOfPages;
 @property (strong, readonly, nonatomic) NSArray *pages;
+@property (weak, readwrite, nonatomic) id<UIScrollViewDelegate> delegate;
 
 - (void)addPage:(UIView *)pageView;
 - (void)scrollToPageWithIndex:(NSUInteger)pageIndex animated:(BOOL)animated;
