@@ -17,6 +17,7 @@
 		30D5CA26174ACB2100D3307A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D5CA25174ACB2100D3307A /* Default@2x.png */; };
 		30D5CA28174ACB2100D3307A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30D5CA27174ACB2100D3307A /* Default-568h@2x.png */; };
 		30D5CA30174ACB3400D3307A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5CA2F174ACB3400D3307A /* RootViewController.m */; };
+		30D5CA34174ACB4C00D3307A /* REPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D5CA33174ACB4C00D3307A /* REPagedScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		30D5CA27174ACB2100D3307A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		30D5CA2E174ACB3400D3307A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		30D5CA2F174ACB3400D3307A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		30D5CA32174ACB4C00D3307A /* REPagedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REPagedScrollView.h; sourceTree = "<group>"; };
+		30D5CA33174ACB4C00D3307A /* REPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPagedScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 		30D5CA05174ACB2000D3307A = {
 			isa = PBXGroup;
 			children = (
+				30D5CA31174ACB4C00D3307A /* REPagedScrollView */,
 				30D5CA17174ACB2000D3307A /* REPagedScrollViewExample */,
 				30D5CA10174ACB2000D3307A /* Frameworks */,
 				30D5CA0F174ACB2000D3307A /* Products */,
@@ -102,6 +106,16 @@
 				30D5CA27174ACB2100D3307A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30D5CA31174ACB4C00D3307A /* REPagedScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				30D5CA32174ACB4C00D3307A /* REPagedScrollView.h */,
+				30D5CA33174ACB4C00D3307A /* REPagedScrollView.m */,
+			);
+			name = REPagedScrollView;
+			path = ../REPagedScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +186,7 @@
 				30D5CA1E174ACB2000D3307A /* main.m in Sources */,
 				30D5CA22174ACB2000D3307A /* AppDelegate.m in Sources */,
 				30D5CA30174ACB3400D3307A /* RootViewController.m in Sources */,
+				30D5CA34174ACB4C00D3307A /* REPagedScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
