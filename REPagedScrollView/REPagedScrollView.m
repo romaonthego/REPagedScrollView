@@ -162,6 +162,9 @@
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
 {
+    if ([_delegate conformsToProtocol:@protocol(UIScrollViewDelegate)] && [_delegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)])
+        return [_delegate scrollViewShouldScrollToTop:scrollView];
+    
     return YES;
 }
 
