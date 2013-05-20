@@ -163,7 +163,8 @@
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale;
 {
-    
+    if ([_delegate conformsToProtocol:@protocol(UIScrollViewDelegate)] && [_delegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)])
+        [_delegate scrollViewDidEndZooming:scrollView withView:view atScale:scale];
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
