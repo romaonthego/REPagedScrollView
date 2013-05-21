@@ -34,7 +34,7 @@ $ touch Podfile
 $ edit Podfile
 ```
 
-Edit your Podfile and add REMenu:
+Edit your Podfile and add REPagedScrollView:
 
 ``` bash
 platform :ios, '5.0'
