@@ -61,6 +61,7 @@ All you need to do is drop `REPagedScrollView` files into your project, and add 
 
 ## Example Usage
 
+``` objective-c
 REPagedScrollView *scrollView = [[REPagedScrollView alloc] initWithFrame:self.view.bounds];
 scrollView.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
 scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
@@ -85,6 +86,7 @@ test.backgroundColor = [UIColor redColor];
 test = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
 test.backgroundColor = [UIColor yellowColor];
 [scrollView addPage:test];
+```
 
 ## Contact
 
