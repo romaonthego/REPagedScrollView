@@ -58,3 +58,11 @@ Please note that if your installation fails, it may be because you are installin
 ### Manual Install
 
 All you need to do is drop `REPagedScrollView` files into your project, and add `#include "REPagedScrollView.h"` to the top of classes that will use it.
+
+## Contact
+
+Roman Efimov
+
+- https://github.com/romaonthego
+- https://twitter.com/romaonthego
+- romefimov@gmail.com
