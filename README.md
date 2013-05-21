@@ -54,3 +54,7 @@ $ open MyProject.xcworkspace
 ```
 
 Please note that if your installation fails, it may be because you are installing with a version of Git lower than CocoaPods is expecting. Please ensure that you are running Git >= **1.8.0** by executing `git --version`. You can get a full picture of the installation details by executing `pod install --verbose`.
+
+### Manual Install
+
+All you need to do is drop `REPagedScrollView` files into your project, and add `#include "REPagedScrollView.h"` to the top of classes that will use it.
