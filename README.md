@@ -61,6 +61,31 @@ All you need to do is drop `REPagedScrollView` files into your project, and add 
 
 ## Example Usage
 
+REPagedScrollView *scrollView = [[REPagedScrollView alloc] initWithFrame:self.view.bounds];
+scrollView.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
+[self.view addSubview:scrollView];
+
+UIView *test = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
+test.backgroundColor = [UIColor lightGrayColor];
+[scrollView addPage:test];
+
+test = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
+test.backgroundColor = [UIColor blueColor];
+[scrollView addPage:test];
+
+test = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
+test.backgroundColor = [UIColor greenColor];
+[scrollView addPage:test];
+
+test = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
+test.backgroundColor = [UIColor redColor];
+[scrollView addPage:test];
+
+test = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height - 40)];
+test.backgroundColor = [UIColor yellowColor];
+[scrollView addPage:test];
+
 ## Contact
 
 Roman Efimov
