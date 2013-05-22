@@ -2,6 +2,8 @@
 
 Paged UIScrollView with an embedded UIPageControl.
 
+<img src="https://github.com/romaonthego/REPagedScrollView/raw/master/Screenshot.png" alt="REPagedScrollView Screenshot" width="320" height="480" />
+
 ## Requirements
 * Xcode 4.5 or higher
 * Apple LLVM compiler
