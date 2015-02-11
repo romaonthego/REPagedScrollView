@@ -33,6 +33,14 @@
 @property (strong, readonly, nonatomic) NSArray *pages;
 @property (weak, readwrite, nonatomic) id<UIScrollViewDelegate> delegate;
 
+typedef NS_ENUM(NSInteger, ScrollOrientation) {
+    ScrollOrientationVertical,
+    ScrollOrientationHorizontal,
+};
+
+@property (readwrite, nonatomic) ScrollOrientation orientation;
+
+- (void)addPageControl;
 - (void)addPage:(UIView *)pageView;
 - (void)scrollToPageWithIndex:(NSUInteger)pageIndex animated:(BOOL)animated;
 
