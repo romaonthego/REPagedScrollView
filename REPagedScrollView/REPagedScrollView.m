@@ -52,14 +52,19 @@
 }
 
 - (void) addPageControl{
-    if(_orientation == ScrollOrientationVertical){
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 36, self.frame.size.height)];
+    _pageControlWeight = _pageControlWeight ?: 36;
+    if(_orientation == ScrollOrientationVerticalLeft){
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, _pageControlWeight, self.frame.size.height)];
         _pageControl.transform = CGAffineTransformMakeRotation(M_PI_2);
-        _pageControl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
-    }else{
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 36, self.frame.size.width, 36)];
-        _pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    }else if(_orientation == ScrollOrientationVerticalRight){
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(self.frame.size.width - _pageControlWeight, 0, _pageControlWeight, self.frame.size.height)];
+        _pageControl.transform = CGAffineTransformMakeRotation(M_PI_2);
+    }else if(_orientation == ScrollOrientationHorizontalTop){
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, _pageControlWeight)];
+    }else {
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - _pageControlWeight, self.frame.size.width, _pageControlWeight)];
     }
+    _pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     [_pageControl addTarget:self action:@selector(pageControlPageDidChange:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:_pageControl];
 }
@@ -67,7 +72,7 @@
 - (void)addPage:(UIView *)page
 {
     CGRect rect;
-    if(_orientation == ScrollOrientationVertical){
+    if(_orientation == ScrollOrientationVerticalLeft || _orientation == ScrollOrientationVerticalRight){
         rect = CGRectMake(0, self.numberOfPages * _scrollView.frame.size.height, _scrollView.frame.size.width, _scrollView.frame.size.height);
     }else{
         rect = CGRectMake(self.numberOfPages * _scrollView.frame.size.width, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
@@ -77,7 +82,7 @@
     [_scrollView addSubview:pageContainerView];
     [_pageViews addObject:pageContainerView];
     
-    if(_orientation == ScrollOrientationVertical){
+    if(_orientation == ScrollOrientationVerticalLeft || _orientation == ScrollOrientationVerticalRight){
         _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, _scrollView.frame.size.height * self.numberOfPages);
     }else{
         _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * self.numberOfPages, _scrollView.frame.size.height);
@@ -88,7 +93,7 @@
 - (void)scrollToPageWithIndex:(NSUInteger)pageIndex animated:(BOOL)animated
 {
     CGRect frame = _scrollView.frame;
-    if(_orientation == ScrollOrientationVertical){
+    if(_orientation == ScrollOrientationVerticalLeft || _orientation == ScrollOrientationVerticalRight){
         frame.origin.x = 0;
         frame.origin.y = frame.size.height * pageIndex;
     }else{
@@ -122,7 +127,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     int page;
-    if(_orientation == ScrollOrientationVertical){
+    if(_orientation == ScrollOrientationVerticalLeft || _orientation == ScrollOrientationVerticalRight){
         CGFloat pageHeight = scrollView.frame.size.height;
         page = floor((scrollView.contentOffset.y - pageHeight / 2.0) / pageHeight) + 1;
     }else{
