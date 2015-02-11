@@ -19,6 +19,9 @@
 {
     [super viewDidLoad];
 	REPagedScrollView *scrollView = [[REPagedScrollView alloc] initWithFrame:self.view.bounds];
+    scrollView.orientation = ScrollOrientationVerticalLeft;
+    scrollView.pageControlWeight = 20.0f;
+    [scrollView addPageControl];
     scrollView.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     scrollView.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
     [self.view addSubview:scrollView];
